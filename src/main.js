@@ -7,6 +7,7 @@ import Vuex from 'vuex'
 import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import echarts from 'echarts'
 import './assets/iconfont/iconfont'
 import VueParticles from 'vue-particles'
 import './assets/css/style.css'
@@ -14,6 +15,8 @@ import './assets/css/style.css'
 Vue.use(Vuex)
 Vue.use(ElementUI)
 Vue.use(VueParticles)
+
+Vue.prototype.$echarts = echarts
 
 Vue.config.productionTip = false
 

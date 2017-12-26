@@ -1,6 +1,6 @@
 <template>
   <el-aside :style="collapseStyle">
-    <el-menu background-color="#545c64" :style="collapseStyle" text-color="#fff" :collapse="sidebarCollapse"
+    <el-menu background-color="#001529" :style="collapseStyle" text-color="#88929b" :collapse="sidebarCollapse"
              :unique-opened="true" router>
       <template v-for="item in this.$router.options.routes"
                 v-if="item.path!='*'&&(!item.MenuSettings||(item.MenuSettings!=null&&!item.MenuSettings.hidden))">
@@ -48,7 +48,7 @@
     },
     methods: {
       generateMenuKey(obj) {
-        return md5(obj).toString()
+        return md5(JSON.stringify(obj)).toString()
       }
     }
   }
@@ -57,7 +57,7 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .el-aside {
-    background: #545c64;
+    background: #001529;
     overflow: visible;
   }
 </style>

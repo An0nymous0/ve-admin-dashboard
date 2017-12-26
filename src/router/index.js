@@ -4,6 +4,8 @@ import Welcome from '@/pages/Welcome'
 import Login from '@/pages/Login'
 import MainLayout from '@/pages/layout/MainLayout'
 import TableSample1 from '@/pages/TableSample1'
+import RadarChar from '@/pages/char/Radar'
+import BubbleChar from '@/pages/char/Bubble'
 
 Vue.use(Router)
 //  MenuSettings:
@@ -21,7 +23,6 @@ export default new Router({
         {path: 'welcome', component: Welcome, name: '欢迎页'}
       ]
     },
-    {path: '/login', component: Login, MenuSettings: {hidden: true}, name: '登录'},
     {
       path: '/table',
       name: '表格1',
@@ -32,13 +33,15 @@ export default new Router({
       ]
     },
     {
-      path: '/table',
-      name: '表格2',
+      path: '/char',
+      name: '图表',
       component: MainLayout,
       children: [
-        {path: 'tableSample21', name: '表格2-1', component: TableSample1},
+        {path: 'radar', component: RadarChar, name: '雷达图'},
+        {path: 'bubble', component: BubbleChar, name: '气泡图'},
       ]
     },
+    {path: '/login', component: Login, MenuSettings: {hidden: true}, name: '登录'},
     {path: '*', component: MainLayout, redirect: '/welcome',}
   ]
 })

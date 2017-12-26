@@ -3,7 +3,11 @@
     <sidebar></sidebar>
     <el-container direction="vertical" style="background: #f0f2f5;"><!--style fixed:https://github.com/ElemeFE/element/issues/8298-->
       <navbar></navbar>
-      <router-view></router-view>
+      <transition name="fade" mode="out-in">
+        <keep-alive>
+          <router-view></router-view>
+        </keep-alive>
+      </transition>
     </el-container>
   </el-container>
 </template>
