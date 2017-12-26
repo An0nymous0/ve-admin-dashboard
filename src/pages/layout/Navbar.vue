@@ -20,6 +20,7 @@
         <el-dropdown-item>账号设置</el-dropdown-item>
         <el-dropdown-item>修改密码</el-dropdown-item>
         <el-dropdown-item>安全退出</el-dropdown-item>
+        <el-dropdown-item>{{sidebarCollapse}}1</el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
 
@@ -28,7 +29,7 @@
 </template>
 
 <script>
-  import {mapState, mapActions} from 'vuex'
+  import {mapActions, mapGetters} from 'vuex'
 
   export default {
     name: 'Navbar',
@@ -42,9 +43,9 @@
       }
     },
     computed: {
-      ...mapState({
-        sidebarCollapse: 'sidebarCollapse'
-      })
+      ...mapGetters([
+        'sidebarCollapse'
+      ]),
     },
     methods: {
       ...mapActions([
