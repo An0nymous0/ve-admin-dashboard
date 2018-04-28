@@ -40,7 +40,7 @@
 //  import {requestLogin, login} from '../api/api';
   import {mapGetters} from 'vuex'
   import {mapActions} from 'vuex'
-  import md5 from 'crypto-js/md5'
+  // import md5 from 'crypto-js/md5'
 
   export default {
     data() {
@@ -74,6 +74,7 @@
 //        'update_token',
       ]),
       handleLogin(ev) {
+        console.log(ev)
 //        this.$refs.ruleForm2.validate((valid) => {
 //          if (valid) {
 //            this.logining = true;

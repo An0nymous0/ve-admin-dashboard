@@ -4,16 +4,16 @@
              :unique-opened="true" router>
       <template v-for="item in this.$router.options.routes"
                 v-if="item.path!='*'&&(!item.MenuSettings||(item.MenuSettings!=null&&!item.MenuSettings.hidden))">
-        <el-submenu v-if="item.children.length>1" :index="item.path">
+        <el-submenu v-if="item.children.length>1" :index="item.path" :key="item.path">
           <template slot="title">
             <i class="el-icon-menu"></i>
             <span slot="title">{{item.name}}</span>
           </template>
-          <el-menu-item v-for="itemC in item.children" :index="item.path+'/'+itemC.path"
-                        :key="generateMenuKey(itemC)">{{itemC.name}}
-          </el-menu-item>
+          <el-menu-item v-for="itemC in item.children" :key="generateMenuKey(itemC)"
+                        :index="item.path+'/'+itemC.path"
+          >{{itemC.name}}</el-menu-item>
         </el-submenu>
-        <el-menu-item v-else :index="item.path+'/'+item.children[0].path">
+        <el-menu-item v-else :index="item.path+'/'+item.children[0].path" :key="item.path+'/'+item.children[0].path">
           <i class="el-icon-menu"></i>
           <span slot="title">{{item.children[0].name}}</span>
         </el-menu-item>
@@ -23,15 +23,14 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
+  import {mapGetters} from 'vuex'
   import md5 from 'crypto-js/md5';
 
   export default {
     name: 'Sidebar',
     components: {},
     data() {
-      return {
-      }
+      return {}
     },
     mounted() {
     },

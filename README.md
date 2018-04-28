@@ -4,7 +4,7 @@
 
 ## 介绍
 
-![](static/WX20171122-100411@2x.png)
+![](public/WX20171122-100411@2x.png)
 
 ## Build Setup
 
